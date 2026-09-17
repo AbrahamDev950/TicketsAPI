@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  atendi-tickets-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ASPNETCORE_URLS=http://+:8080
+    volumes:
+      # Persistir la base de datos SQLite en el host
+      - ./data:/app/data
+    container_name: atendi-tickets-api
+
+volumes:
+  data:

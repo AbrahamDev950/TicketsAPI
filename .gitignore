@@ -1,0 +1,48 @@
+# Visual Studio
+.vs/
+.vscode/
+*.sln.iml
+*.user
+*.userprefs
+*.suo
+*.sln
+
+# Build results
+bin/
+obj/
+debug/
+release/
+
+# Database files
+*.db
+*.db-shm
+*.db-wal
+data/
+
+# Entity Framework
+Migrations/
+
+# Rider
+.idea/
+*.sln.iml
+
+# User-specific files
+appsettings.Development.json
+
+# NuGet
+.nuget/
+
+# Local environment
+.env
+.env.local
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Docker (local development)
+.docker/

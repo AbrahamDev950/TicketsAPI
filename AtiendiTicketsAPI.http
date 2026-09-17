@@ -1,0 +1,6 @@
+@AtiendiTicketsAPI_HostAddress = http://localhost:5243
+
+GET {{AtiendiTicketsAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
