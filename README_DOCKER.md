@@ -145,4 +145,3 @@ AtiendiTicketsAPI/
 3. Prueba crear un ticket desde la UI
 4. Verifica que lo puedas recuperar
 
-¡Listo! Tu maestro solo necesita ejecutar `docker-compose up --build` 🎉

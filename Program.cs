@@ -28,7 +28,7 @@ var app = builder.Build();
 using (var scope = app.Services.CreateScope())
 {
     var dbContext = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
-    dbContext.Database.MigrateAsync().Wait();
+    dbContext.Database.Migrate();
 }
 app.MapOpenApi();
 app.UseSwagger();
