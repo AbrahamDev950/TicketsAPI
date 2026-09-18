@@ -10,19 +10,19 @@ public class Ticket
     /// <summary>
     /// El ID único del ticket asignado por el sistema.
     /// </summary>
-    public Guid Id { get; set; } = Guid.NewGuid();
+    public Guid Id { get; init; } = Guid.NewGuid();
     
     [Required]
     [StringLength(100, MinimumLength = 5)]
-    public string Cliente { get; set; }
+    public string? Cliente { get; set; }
     
     [Required]
     [StringLength(100, MinimumLength = 5)]
-    public string Asunto { get; set; }
+    public string? Asunto { get; set; }
     
     [Required]
     [StringLength(100, MinimumLength = 5)]
-    public string Descripcion { get; set; }
+    public string? Descripcion { get; set; }
     
     /// <summary>
     /// Representa la prioridad del ticket, que puede ser Baja, Media, Alta o Crítica.
@@ -41,5 +41,5 @@ public class Ticket
     /// La fecha y hora en que se creó el ticket.
     /// Se establece automáticamente al crear un nuevo ticket.
     /// </summary>
-    public DateTime FechaCreacion { get; set; } = DateTime.UtcNow;
+    public DateTime FechaCreacion { get; init; } = DateTime.UtcNow;
 }

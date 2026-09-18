@@ -40,7 +40,7 @@ Una vez que el contenedor esté corriendo:
 - **Swagger UI:** http://localhost:8080/swagger
 - **API Base:** http://localhost:8080/api/tickets
 
-## 📝 Ejemplo de uso
+## 📝 Ejemplo de uso en terminal
 
 ### Crear un ticket (POST)
 ```bash
@@ -76,7 +76,7 @@ Los datos **persisten** incluso si paras y reinicias el contenedor.
 ## 🐛 Solución de problemas
 
 ### "Puerto 8080 ya está en uso"
-Usa otro puerto:
+Usar otro puerto:
 ```bash
 docker run -d -p 9000:8080 atendi-tickets-api
 # Accede a http://localhost:9000
@@ -103,6 +103,8 @@ AtiendiTicketsAPI/
 ├── .dockerignore          
 ├── appsettings.json       
 ├── Program.cs
+├── data/
+│   └── AtiendiTicketsDB.db
 ├── Controllers/
 │   └── TicketController.cs
 ├── Datos/

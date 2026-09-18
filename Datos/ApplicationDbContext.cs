@@ -17,5 +17,6 @@ public class ApplicationDbContext : DbContext
     }
 
     // Seccion para definir las entidades de la base de datos
+    // en nuestro caso solo exite la entidad Ticket, pero se pueden agregar más entidades según sea necesario.
     public DbSet<Ticket> Tickets { get; set; }
 }

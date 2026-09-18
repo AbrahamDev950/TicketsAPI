@@ -26,13 +26,15 @@ public class TicketController : ControllerBase
     }
 
     /// <summary>
-    /// Obtiene todos los tickets de la base de datos.
+    /// Obtiene todos los tickets de la base de datos y los devuelve ordenados por fecha de creación.
     /// </summary>
     /// <returns></returns>
     [HttpGet]
     public async Task<IActionResult> GetTickets()
     {
-        var tickets = await _context.Tickets.ToListAsync();
+        var tickets = await _context.Tickets
+            .OrderBy(t => t.FechaCreacion)
+            .ToListAsync();
         return Ok(tickets);
     }
 
@@ -70,11 +72,11 @@ public class TicketController : ControllerBase
             return BadRequest("La prioridad del ticket debe ser 'Baja', 'Media', 'Alta' o 'Crítica'.");
         }
 
-        if (!EsEstadoValido(ticket.Estado))
+        if (ticket.Estado != Estado.Abierto)
         {
-            return BadRequest("El estado del ticket debe ser 'Abierto', 'En Progreso', 'Resuelto' o 'Cancelado'.");
+            return BadRequest("El estado inicial del ticket debe ser 'Abierto'.");
         }
-
+        
         // Para evitar crear DTOs y mantener la simplicidad del código,
         // se puede crear un nuevo objeto Ticket y asignar los valores
         // del ticket recibido en la petición para controlar su creación.
