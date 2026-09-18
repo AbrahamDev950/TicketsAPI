@@ -16,7 +16,20 @@ Esta guía explica cómo ejecutar la API de tickets usando Docker.
 git clone https://github.com/AbrahamDev950/TicketsAPI.git
 
 # Accede al repositorio
-cd AtiendiTicketsAPI
+cd TicketsAPI
+
+# Si estas como usuario principal, puedes ejecutar directamente:
+sudo docker-compose up --build
+
+# La API estará disponible en: http://localhost:8080
+```
+```bash
+
+# Si quieres agregar permisos al usuario actual para ejecutar Docker sin sudo, puedes hacer:
+sudo usermod -aG docker $USER
+
+# Para aplicar cambios sin cerrar sesión, ejecuta:
+newgrp docker
 
 # Construye la imagen y ejecuta el contenedor
 docker-compose up --build
